@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audífonos Premium</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+}
+
+section { padding: 50px 20px; text-align: center; }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero .content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cta-button, .btn {
+  background: #0066ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 280px;
+  background: #111;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.benefits {
+  background: #f0f0f0;
+  color: black;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #0066ff;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+}
+
+footer {
+  padding: 20px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cart-icon" onclick="openCart()">
+🛒 <span class="cart-count" id="cartCount">0</span>
+</div>
+
+<section class="hero">
+<video autoplay muted loop playsinline>
+  <source src="video/airpods.pm4.mp4" type="video/mp4">
+</video>
+
+<div class="content">
+<h1>Vive la Experiencia del Sonido Premium</h1>
+<p>Audífonos inalámbricos que transforman tu música</p>
+<h2>Ofertas por tiempo limitado</h2>
+<button class="cta-button" onclick="goToProducts()">Comprar ahora</button>
+</div>
+</section>
+
+<section id="products">
+<h2>Nuestros Productos</h2>
+<div class="products">
+
+<div class="product-card">
+<img src="productos/airpods pro 2.jpg">
+<h3>Airpods pro 2</h3>
+<p>$15</p>
+<button class="btn" onclick="addToCart('Airpods pro 2',15)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods pro 2','Sonido envolvente, batería de larga duración y almohadillas cómodas.')">Ver descripción</button>
+</div>
+
+<div class="product-card">
+<img src="productos/airpods max.jpg">
+<h3>Airpods Max</h3>
+<p>$20</p>
+<button class="btn" onclick="addToCart('Airpods Max',20)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods Max','Diseño compacto, conexión Bluetooth y excelente calidad de audio.')">Ver descripción</button>
+</div>
+
+</div>
+</section>
+
+<section class="benefits">
+<h2>¿Por qué elegirnos?</h2>
+<p>Comodidad · Calidad · Mejor precio</p>
+<p>unidades disponibles hasta agotar stock</p>
+</section>
+
+<section style="background:black;color:white;">
+<h2>Entrega GRATIS</h2>
+<p>En toda la ciudad de Ambato</p>
+</section>
+
+<section class="benefits">
+<p>Entregas rápidas · Atención personalizada · Compra segura</p>
+</section>
+
+<footer>
+<p>© 2026 Audífonos Premium</p>
+</footer>
+
+<div class="modal" id="cartModal">
+<div class="modal-content">
+<h3>Resumen / Factura</h3>
+<div id="cartItems"></div>
+<p><strong>Total: $<span id="total">0</span></strong></p>
+<button class="btn" onclick="checkout()">Comprar</button>
+<button class="btn" onclick="closeCart()">Cerrar</button>
+</div>
+</div>
+
+<div class="modal" id="descModal">
+<div class="modal-content">
+<h3 id="descTitle"></h3>
+<p id="descText"></p>
+<button class="btn" onclick="closeDesc()">Cerrar</button>
+</div>
+</div>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  document.getElementById("cartCount").innerText = cart.length;
+}
+
+function openCart() {
+  let html = "";
+  let total = 0;
+
+  cart.forEach((p, i) => {
+    html += `<p>${p.name} - $${p.price}
+    <button onclick="removeItem(${i})">Eliminar</button></p>`;
+    total += p.price;
+  });
+
+  document.getElementById("cartItems").innerHTML = html || "Carrito vacío";
+  document.getElementById("total").innerText = total;
+  document.getElementById("cartModal").style.display = "flex";
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  document.getElementById("cartCount").innerText = cart.length;
+  openCart();
+}
+
+function closeCart() {
+  document.getElementById("cartModal").style.display = "none";
+}
+
+function checkout() {
+  let msg = "Hola, quiero comprar:%0A";
+  let total = 0;
+  cart.forEach(p=>{
+    msg += `- ${p.name} ($${p.price})%0A`;
+    total += p.price;
+  });
+  msg += `%0ATotal: $${total}%0ACiudad: Ambato`;
+  window.open(`https://wa.me/593983729109?text=${msg}`);
+}
+
+function goToProducts() {
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+
+function showDescription(title,text){
+  document.getElementById("descTitle").innerText = title;
+  document.getElementById("descText").innerText = text;
+  document.getElementById("descModal").style.display = "flex";
+}
+
+function closeDesc(){
+  document.getElementById("descModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
