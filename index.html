@@ -17,7 +17,7 @@ section { padding: 50px 20px; text-align: center; }
 
 .hero {
   position: relative;
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -109,6 +109,16 @@ section { padding: 50px 20px; text-align: center; }
   width: 90%;
 }
 
+/* ESTILO AGREGADO PARA LA LISTA */
+#descText ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+#descText li {
+  margin-bottom: 8px;
+}
+
 footer {
   padding: 20px;
   background: black;
@@ -146,8 +156,31 @@ footer {
 <img src="productos/airpods pro 2.jpg">
 <h3>Airpods pro 2</h3>
 <p>$16</p>
-<button class="btn" onclick="addToCart('Airpods pro 2',15)">Agregar al carrito</button>
-<button class="btn" onclick="showDescription('Airpods pro 2','Sonido envolvente, batería de larga duración y almohadillas cómodas.')">Ver descripción</button>
+<button class="btn" onclick="addToCart('Airpods pro 2',16)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods pro 2',
+`<ul>
+<li>sonido estereo de alta calidad</li>
+<li>conexión Bluetooth estable</li>
+<li>Cancelación de ruido profesional</li>
+<li>Conexión Bluetooth estable</li>
+<li>Duracion de bateria 6 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
+</ul>`)">Ver descripción</button>
+</div>
+
+<div class="product-card">
+<img src="productos/airpods pro 2.jpg">
+<h3>Airpods pro 3</h3>
+<p>$20</p>
+<button class="btn" onclick="addToCart('Airpods pro 3',20)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods pro 3',
+`<ul>
+<li>sonido estereo de alta calidad</li>
+<li>Cancelación de ruido</li>
+<li>conexión Bluetooth rapida</li>
+<li>Duracion de bateria 7-8 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
+</ul>`)">Ver descripción</button>
 </div>
 
 <div class="product-card">
@@ -155,7 +188,15 @@ footer {
 <h3>Airpods Max</h3>
 <p>$20</p>
 <button class="btn" onclick="addToCart('Airpods Max',20)">Agregar al carrito</button>
-<button class="btn" onclick="showDescription('Airpods Max','Diseño compacto, conexión Bluetooth y excelente calidad de audio.')">Ver descripción</button>
+<button class="btn" onclick="showDescription('Airpods Max',
+`<ul>
+<li>sonido estereo de alta calidad</li>
+<li>conexión Bluetooth estable</li>
+<li>almohadillas comodas</li>
+<li>Conexión Bluetooth estable</li>
+<li>Duracion de bateria 12-13 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
+</ul>`)">Ver descripción</button>
 </div>
 
 </div>
@@ -193,7 +234,7 @@ footer {
 <div class="modal" id="descModal">
 <div class="modal-content">
 <h3 id="descTitle"></h3>
-<p id="descText"></p>
+<div id="descText"></div>
 <button class="btn" onclick="closeDesc()">Cerrar</button>
 </div>
 </div>
@@ -248,7 +289,7 @@ function goToProducts() {
 
 function showDescription(title,text){
   document.getElementById("descTitle").innerText = title;
-  document.getElementById("descText").innerText = text;
+  document.getElementById("descText").innerHTML = text;
   document.getElementById("descModal").style.display = "flex";
 }
 
@@ -258,7 +299,4 @@ function closeDesc(){
 </script>
 
 </body>
-
 </html>
-
-
