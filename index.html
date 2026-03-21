@@ -4,51 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Audífonos Premium</title>
-<meta name="description" content="Audífonos inalámbricos premium con entrega GRATIS en Ambato. AirPods Pro 2, Pro 3 y Max a precios increíbles.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
 
 <style>
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --primary: #0066ff;
-  --primary-dark: #0052cc;
-  --success: #00ff88;
-  --danger: #ff4444;
-  --bg-dark: #111;
-  --bg-darker: #1a1a1a;
-  --border: #333;
-  --text: #fff;
-  --shadow: 0 10px 30px rgba(0,102,255,0.3);
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
-  background: #000;
-  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: black;
+  color: white;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 section { 
-  padding: 80px 0; 
+  padding: 60px 20px; 
   text-align: center; 
 }
 
 .hero {
   position: relative;
-  height: clamp(70vh, 85vw, 90vh);
-  min-height: 550px;
+  height: 80vh;
+  min-height: 500px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -61,123 +40,75 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,102,255,0.2) 100%);
   z-index: -1;
 }
 
-.hero-content {
+.hero .content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 800px;
   padding: 0 20px;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 800;
-  margin: 0 0 1.2rem 0;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.8);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-.hero-subtitle {
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+.hero p {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
   margin: 0 0 1.5rem 0;
   opacity: 0.95;
-  font-weight: 300;
 }
 
 .hero h2 {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  margin: 2rem 0 3rem 0;
-  background: linear-gradient(135deg, var(--primary), #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  margin: 1rem 0 2rem 0;
+  color: #0066ff;
 }
 
 .cta-button, .btn {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: #0066ff;
   color: white;
-  padding: clamp(16px, 3vw, 20px) clamp(35px, 5vw, 45px);
+  padding: 16px 35px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  margin: 10px;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 8px;
+  font-size: 1.1rem;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,102,255,0.4);
   text-decoration: none;
   display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button::before, .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
-
-.cta-button:hover::before, .btn:hover::before {
-  left: 100%;
 }
 
 .cta-button:hover, .btn:hover {
-  background: linear-gradient(135deg, var(--primary-dark), #0040b3);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,102,255,0.5);
+  background: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,102,255,0.6);
 }
 
-.section-title {
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
-  margin-bottom: 3rem;
-  font-weight: 700;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), #00ccff);
-  border-radius: 2px;
-}
-
-.products-grid {
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
-  padding: 0 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .product-card {
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 35px 30px;
-  background: linear-gradient(145deg, var(--bg-darker), var(--bg-dark));
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 30px 25px;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
 }
 
 .product-card::before {
@@ -186,289 +117,224 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--primary), #00ccff, var(--primary));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover::before {
-  transform: scaleX(1);
+  height: 4px;
+  background: linear-gradient(90deg, #0066ff, #00ccff);
 }
 
 .product-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0,102,255,0.4);
-  border-color: var(--primary);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,102,255,0.3);
+  border-color: #0066ff;
 }
 
-.product-image {
+.product-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 18px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .product-card h3 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  margin: 0 0 15px 0;
-  color: var(--text);
-  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  color: #fff;
 }
 
-.product-price {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 800;
-  color: var(--success);
-  margin: 0 0 25px 0;
-  text-shadow: 0 2px 8px rgba(0,255,136,0.3);
+.product-card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00ff88;
+  margin: 0 0 20px 0;
 }
 
 .benefits {
-  background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
-  color: #1a1a1a;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  color: black;
 }
 
 .benefits h2 {
-  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .benefits p {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  margin: 1rem 0;
-  font-weight: 400;
-  opacity: 0.9;
-}
-
-.free-shipping {
-  background: #000 !important;
-  color: var(--text) !important;
-}
-
-.free-shipping h2 {
-  color: var(--success);
-  text-shadow: 0 0 20px rgba(0,255,136,0.5);
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  font-weight: 300;
 }
 
 .cart-icon {
   position: fixed;
-  top: 30px;
-  right: 30px;
-  background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-  padding: 20px;
+  top: 25px;
+  right: 25px;
+  background: linear-gradient(145deg, #0066ff, #0052cc);
+  padding: 16px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10000;
-  box-shadow: 0 15px 40px rgba(0,102,255,0.6);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 1.6rem;
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+  box-shadow: 0 8px 25px rgba(0,102,255,0.5);
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  backdrop-filter: blur(10px);
 }
 
 .cart-icon:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 25px 60px rgba(0,102,255,0.8);
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0,102,255,0.7);
 }
 
 .cart-count {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  background: var(--danger);
+  top: -5px;
+  right: -5px;
+  background: #ff4444;
   color: white;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 6px 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 4px 8px;
   border-radius: 50%;
-  min-width: 26px;
-  height: 26px;
+  min-width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(255,68,68,0.6);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
 }
 
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.97);
-  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(5px);
   justify-content: center;
   align-items: center;
-  z-index: 20000;
-  padding: 30px;
-  animation: modalSlide 0.3s ease;
-}
-
-@keyframes modalSlide {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  z-index: 2000;
+  padding: 20px;
 }
 
 .modal-content {
-  background: linear-gradient(145deg, var(--bg-darker), var(--bg-dark));
-  padding: 50px 40px;
-  border-radius: 30px;
-  max-width: 600px;
-  width: 95%;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  padding: 40px;
+  border-radius: 25px;
+  max-width: 500px;
+  width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  border: 1px solid var(--border);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.9);
-  position: relative;
+  border: 1px solid #333;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
 }
 
 .modal-content h3 {
-  margin: 0 0 30px 0;
-  color: var(--primary);
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-}
-
-.cart-item {
-  margin: 20px 0;
-  padding: 20px;
-  background: rgba(34,34,34,0.8);
-  border-radius: 16px;
-  border-left: 5px solid var(--primary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.cart-item:hover {
-  background: rgba(51,51,51,0.9);
-  transform: translateX(5px);
-}
-
-.cart-item button {
-  background: var(--danger);
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.total-row {
-  font-size: 2.2rem !important;
-  color: var(--success) !important;
-  font-weight: 800 !important;
-  margin: 30px 0 !important;
-  text-shadow: 0 0 20px rgba(0,255,136,0.5);
+  margin-top: 0;
+  color: #0066ff;
+  font-size: 1.8rem;
 }
 
 #descText ul {
   text-align: left;
-  padding-left: 30px;
-  margin: 25px 0;
+  padding-left: 25px;
+  margin: 20px 0;
 }
 
 #descText li {
-  margin-bottom: 15px;
-  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
   position: relative;
-  padding-left: 10px;
 }
 
 #descText li::marker {
-  color: var(--primary);
-  font-size: 1.3em;
+  color: #0066ff;
+}
+
+#cartItems p {
+  margin: 15px 0;
+  padding: 15px;
+  background: #222;
+  border-radius: 12px;
+  border-left: 4px solid #0066ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cartItems button {
+  background: #ff4444;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+#total {
+  font-size: 2rem !important;
+  color: #00ff88 !important;
 }
 
 footer {
-  padding: 50px 0 30px;
+  padding: 40px 20px;
   background: #000;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #333;
 }
 
 footer p {
   margin: 0;
-  font-size: 1.15rem;
-  opacity: 0.85;
-  font-weight: 400;
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-  .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
-}
-
 @media (max-width: 768px) {
   .hero {
-    height: 75vh;
+    height: 70vh;
+    min-height: 400px;
   }
   
   section {
-    padding: 60px 0;
+    padding: 40px 15px;
   }
   
-  .products-grid {
+  .products {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px;
   }
   
   .product-card {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
   
   .modal-content {
-    padding: 40px 30px;
+    padding: 30px 25px;
     margin: 20px;
   }
   
   .cart-icon {
-    top: 25px;
-    right: 25px;
-    padding: 18px;
+    top: 20px;
+    right: 20px;
+    padding: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .hero-content {
+  .hero .content {
     padding: 0 15px;
   }
   
   .cta-button, .btn {
-    padding: 15px 30px;
-    display: block;
-    margin: 10px auto;
-    max-width: 280px;
+    padding: 14px 28px;
+    font-size: 1rem;
   }
   
-  .product-image {
-    height: 200px;
-  }
-  
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+  .product-card img {
+    height: 180px;
   }
 }
 
-/* ANIMACIONES */
+/* ANIMACIONES SUAVES */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -477,85 +343,196 @@ footer p {
 }
 
 .product-card {
-  opacity: 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.product-card:nth-child(1) { animation-delay: 0.1s; }
-.product-card:nth-child(2) { animation-delay: 0.2s; }
-.product-card:nth-child(3) { animation-delay: 0.3s; }
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.2s; }
 </style>
 </head>
 
 <body>
 
-<div class="cart-icon" onclick="openCart()" title="Ver carrito">
+<div class="cart-icon" onclick="openCart()">
 🛒 <span class="cart-count" id="cartCount">0</span>
 </div>
 
 <section class="hero">
-<video autoplay muted loop playsinline preload="auto">
+<video autoplay muted loop playsinline>
   <source src="video/airpods.pm4.mp4" type="video/mp4">
-  Tu navegador no soporta video.
 </video>
 
-<div class="hero-content">
+<div class="content">
 <h1>Vive la Experiencia del Sonido Premium</h1>
-<p class="hero-subtitle">Audífonos inalámbricos que transforman tu música</p>
+<p>Audífonos inalámbricos que transforman tu música</p>
 <h2>Ofertas por tiempo limitado</h2>
 <button class="cta-button" onclick="goToProducts()">Comprar ahora</button>
 </div>
 </section>
 
 <section id="products">
-<div class="container">
-<h2 class="section-title">Nuestros Productos</h2>
-<div class="products-grid">
+<h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem;">Nuestros Productos</h2>
+<div class="products">
 
 <div class="product-card">
-<img src="productos/airpods pro 2.jpg" alt="AirPods Pro 2" class="product-image" loading="lazy">
-<h3>AirPods Pro 2</h3>
-<p class="product-price">$16</p>
-<button class="btn" onclick="addToCart('AirPods Pro 2', 16)">Agregar al carrito</button>
-<button class="btn" onclick="showDescription('AirPods Pro 2', 
+<img src="productos/airpods pro 2.jpg" alt="Airpods pro 2" loading="lazy">
+<h3>Airpods pro 2</h3>
+<p>$16</p>
+<button class="btn" onclick="addToCart('Airpods pro 2',16)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods pro 2',
 `<ul>
-<li>🔊 Sonido estéreo de alta calidad</li>
-<li>📶 Conexión Bluetooth estable</li>
-<li>🔇 Cancelación de ruido profesional</li>
-<li>⏱️ Duración de batería 6 horas continuas</li>
-<li>📱 Compatibles con iPhone y Android</li>
+<li>sonido estereo de alta calidad</li>
+<li>conexión Bluetooth estable</li>
+<li>Cancelación de ruido profesional</li>
+<li>Conexión Bluetooth estable</li>
+<li>Duracion de bateria 6 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
 </ul>`)">Ver descripción</button>
 </div>
 
 <div class="product-card">
-<img src="productos/airpods pro 2.jpg" alt="AirPods Pro 3" class="product-image" loading="lazy">
-<h3>AirPods Pro 3</h3>
-<p class="product-price">$18</p>
-<button class="btn" onclick="addToCart('AirPods Pro 3', 18)">Agregar al carrito</button>
-<button class="btn" onclick="showDescription('AirPods Pro 3', 
+<img src="productos/airpods pro 2.jpg" alt="Airpods pro 3" loading="lazy">
+<h3>Airpods pro 3</h3>
+<p>$18</p>
+<button class="btn" onclick="addToCart('Airpods pro 3',18)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods pro 3',
 `<ul>
-<li>🔊 Sonido estéreo de alta calidad</li>
-<li>🔇 Cancelación de ruido avanzada</li>
-<li>⚡ Conexión Bluetooth rápida</li>
-<li>⏱️ Duración de batería 7-8 horas continuas</li>
-<li>📱 Compatibles con iPhone y Android</li>
+<li>sonido estereo de alta calidad</li>
+<li>Cancelación de ruido</li>
+<li>conexión Bluetooth rapida</li>
+<li>Duracion de bateria 7-8 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
 </ul>`)">Ver descripción</button>
 </div>
 
 <div class="product-card">
-<img src="productos/airpods max.jpg" alt="AirPods Max" class="product-image" loading="lazy">
-<h3>AirPods Max</h3>
-<p class="product-price">$20</p>
-<button class="btn" onclick="addToCart('AirPods Max', 20)">Agregar al carrito</button>
-<button class="btn" onclick="showDescription('
+<img src="productos/airpods max.jpg" alt="Airpods Max" loading="lazy">
+<h3>Airpods Max</h3>
+<p>$20</p>
+<button class="btn" onclick="addToCart('Airpods Max',20)">Agregar al carrito</button>
+<button class="btn" onclick="showDescription('Airpods Max',
+`<ul>
+<li>sonido estereo de alta calidad</li>
+<li>conexión Bluetooth estable</li>
+<li>almohadillas comodas</li>
+<li>Conexión Bluetooth estable</li>
+<li>Duracion de bateria 12-13 horas continuas</li>
+<li>compatibles con iPhone y Android</li>
+</ul>`)">Ver descripción</button>
+</div>
+
+</div>
+</section>
+
+<section class="benefits">
+<h2>¿Por qué elegirnos?</h2>
+<p>Comodidad · Calidad · Mejor precio</p>
+<p>unidades disponibles hasta agotar stock</p>
+</section>
+
+<section style="background:black;color:white;">
+<h2 style="font-size: clamp(2rem, 5vw, 3rem);">Entrega GRATIS</h2>
+<p>En toda la ciudad de Ambato</p>
+</section>
+
+<section class="benefits">
+<p>Entregas rápidas · Atención personalizada · Compra segura</p>
+</section>
+
+<footer>
+<p>© 2026 Audífonos Premium</p>
+</footer>
+
+<div class="modal" id="cartModal">
+<div class="modal-content">
+<h3>Resumen / Factura</h3>
+<div id="cartItems"></div>
+<p><strong>Total: $<span id="total">0</span></strong></p>
+<button class="btn" onclick="checkout()">Comprar</button>
+<button class="btn" onclick="closeCart()">Cerrar</button>
+</div>
+</div>
+
+<div class="modal" id="descModal">
+<div class="modal-content">
+<h3 id="descTitle"></h3>
+<div id="descText"></div>
+<button class="btn" onclick="closeDesc()">Cerrar</button>
+</div>
+</div>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  document.getElementById("cartCount").innerText = cart.length;
+  // Efecto visual
+  const btn = event.target;
+  btn.style.transform = 'scale(0.95)';
+  setTimeout(() => btn.style.transform = '', 150);
+}
+
+function openCart() {
+  let html = "";
+  let total = 0;
+
+  cart.forEach((p, i) => {
+    html += `<p>${p.name} - $${p.price}
+    <button onclick="removeItem(${i})">Eliminar</button></p>`;
+    total += p.price;
+  });
+
+  document.getElementById("cartItems").innerHTML = html || "<p style='text-align:center;opacity:0.7;'>Carrito vacío</p>";
+  document.getElementById("total").innerText = total;
+  document.getElementById("cartModal").style.display = "flex";
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  document.getElementById("cartCount").innerText = cart.length;
+  openCart();
+}
+
+function closeCart() {
+  document.getElementById("cartModal").style.display = "none";
+}
+
+function checkout() {
+  let msg = "Hola, quiero comprar:%0A";
+  let total = 0;
+  cart.forEach(p=>{
+    msg += `- ${p.name} ($${p.price})%0A`;
+    total += p.price;
+  });
+  msg += `%0ATotal: $${total}%0ACiudad: Ambato`;
+  window.open(`https://wa.me/593983729109?text=${msg}`);
+}
+
+function goToProducts() {
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+
+function showDescription(title,text){
+  document.getElementById("descTitle").innerText = title;
+  document.getElementById("descText").innerHTML = text;
+  document.getElementById("descModal").style.display = "flex";
+}
+
+function closeDesc(){
+  document.getElementById("descModal").style.display = "none";
+}
+
+// Cerrar modales al hacer click fuera
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('modal')) {
+    e.target.style.display = 'none';
+  }
+});
+
+// Prevenir zoom en inputs (mejora móvil)
+document.addEventListener('touchstart', function() {}, true);
+</script>
+
+</body>
+</html>
